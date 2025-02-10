@@ -32,8 +32,8 @@ This project is a Python-based system for detecting Leg Before Wicket (LBW) scen
 1.  **Clone the repository:**
 
     ```bash
-    git clone [repository-url] # Replace [repository-url] with the actual repository URL if you make it public
-    cd LBW-Detection-main
+    git clone https://github.com/docsallover/lbw-detection-in-cricket.git
+    cd lbw-detection-in-cricket/
     ```
 
 2.  **Create a virtual environment (recommended):**
@@ -119,7 +119,7 @@ LBW-Detection-main/
 ├── main.py          # Main script to run LBW detection, integrates all modules
 ├── ball_detect.py    # Module for ball detection using color-based segmentation
 ├── batsman.py      # Module for batsman detection using color and edge detection, includes tuning trackbars
-├── pitch.py         # (Placeholder) Module for pitch detection - needs implementation
+├── pitch.py         # Module for pitch detection using basic contour detection
 ├── lbw.mp4      # Example cricket video file (replace with your video)
 ├── requirements.txt # (Optional) List of Python dependencies
 └── README.md        # This README file
@@ -128,7 +128,7 @@ LBW-Detection-main/
   * **`main.py`**: The primary script that orchestrates the entire LBW detection process. It reads video frames, calls detection functions from `ball_detect.py`, `batsman.py`, and `pitch.py`, implements the `ball_pitch_pad` logic, and displays the results.
   * **`ball_detect.py`**: Contains the `ball_detect` function responsible for detecting the cricket ball in each frame using color-based segmentation and contour detection.
   * **`batsman.py`**: Contains the `batsman_detect` function for batsman detection using RGB color filtering and edge detection. It also includes trackbar functionality for parameter tuning.
-  * **`pitch.py`**: Currently a placeholder file. It is intended to contain the `pitch` function for detecting the cricket pitch. You will need to implement the actual pitch detection logic in this file.
+  * **`pitch.py`**: Contains the `pitch` function responsible for detecting the cricket pitch in each frame using basic contour detection.
   * **`lbw.mp4`**: Example video file. Replace this with your own cricket video.
   * **`requirements.txt`**: (Optional) Lists the Python package dependencies for the project.
 

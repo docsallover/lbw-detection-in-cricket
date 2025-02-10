@@ -1,24 +1,30 @@
 import cv2
+import numpy as np
 
 
 def pitch(img):
-    """
-    Placeholder function for pitch detection.
-    Replace this with your actual pitch detection logic in pitch.py.
+    imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    imgBlur= cv2.GaussianBlur(imgGray, (5, 5), 1)
+    imgThreshold = cv2.Canny(imgBlur, 190, 167)
+    kernel = np.ones((5, 5))
+    imgDial = cv2.dilate(imgThreshold, kernel, iterations = 2)
+    imgThreshold = cv2.erode(imgDial, kernel, iterations = 2)
 
-    Args:
-        img: The input image frame (BGR format).
 
-    Returns:
-        contours:  Placeholder - Returns an empty list for now.
-                   Replace with your actual pitch contour detection logic.
-    """
-    # Replace this with your actual pitch detection code
-    # For example, you might use color-based segmentation, edge detection, or other methods
-    # to find contours representing the pitch area.
+    lower = np.array([190, 167, 99])
+    upper = np.array([255, 255, 184 ])
 
-    # Example placeholder:  Returning an empty list of contours
-    return []
+
+    mask = cv2.inRange(imgGray, lower, upper)
+    # Find all contours
+
+    width = 264
+    height = 2256
+                 
+    imgContours = img.copy()
+    # imgWrap = img.copy()
+    contours, hierarchy = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    return contours
 
 
 if __name__ == "__main__":
