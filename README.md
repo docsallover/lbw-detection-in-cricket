@@ -132,6 +132,14 @@ LBW-Detection-main/
   * **`lbw.mp4`**: Example video file. Replace this with your own cricket video.
   * **`requirements.txt`**: (Optional) Lists the Python package dependencies for the project.
 
+## Screenshots
+
+![Ball Detection](screenshots/ball-detection.png)
+![Batsman Detection](screenshots/batsman.png)   
+![Pitch Detection](screenshots/pitch.png)
+![Ball + Batsman + Pitch](screenshots/main.png)
+![Terminal/Console Output](screenshots/terminal.png)
+
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
