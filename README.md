@@ -134,10 +134,19 @@ LBW-Detection-main/
 
 ## Screenshots
 
+### Ball Detection
 ![Ball Detection](screenshots/ball-detection.png)
+
+### Batsman Detection
 ![Batsman Detection](screenshots/batsman.png)   
+
+### Pitch Detection
 ![Pitch Detection](screenshots/pitch.png)
+
+### Ball + Batsman + Pitch - main.py
 ![Ball + Batsman + Pitch](screenshots/main.png)
+
+### Terminal/Console Output
 ![Terminal/Console Output](screenshots/terminal.png)
 
 
