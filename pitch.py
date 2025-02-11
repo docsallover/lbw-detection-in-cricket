@@ -3,6 +3,16 @@ import numpy as np
 
 
 def pitch(img):
+    """
+    Detects the cricket pitch in a given image frame using color-based segmentation and edge detection.
+
+    Args:
+        img: The input image frame (BGR format).
+
+    Returns:
+        contours: A list of contours detected in the color-masked and edge-processed image,
+                  presumed to be the pitch. Returns an empty list if no contours are found.
+    """
     imgGray = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     imgBlur= cv2.GaussianBlur(imgGray, (5, 5), 1)
     imgThreshold = cv2.Canny(imgBlur, 190, 167)
